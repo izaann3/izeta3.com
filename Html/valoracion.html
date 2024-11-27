@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IZETA - Artista Emergente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Css/principal.css">
+</head>
+
+<body>
+        <div id="mySidenav" class="sidenav">
+            <script src="../JavaScript/principal.js"></script>
+            <a href="../Principal.html">Página Principal</a>
+            <a href="../Html/biografia.html">Biografía</a>
+            <a href="../Html/galeria.html">Galería</a>
+            <a href="../Html/musica.html">Música</a>
+            <a href="../Html/contacto.html">Contacto</a>  
+            <a href="#valoraciones">Valoraciones</a>
+        </div>
+
+    <!--Utilizar cualquier puntero del raton para la la barra de navegacion-->
+    <span style="font-size: 30px; cursor: pointer;" onclick="openNav()">&#9776; open</span>
+
+    <div class="carousel">
+        <div class="carousel-slide active">
+            <div class="carousel-content">
+                <h2>DESCUBRE MIS NUEVAS CANCIONES</h2>
+                <a href="https://open.spotify.com/intl-es/artist/1hSW0fGEl6NnWyHfW1CZ95?si=L_RYsuxYR3KMPKiNTRR8ZQ"
+                    target="_blank">Escúchame en Spotify</a>
+                <img class="background-image" src="../Images/unnamed.jpg" alt="Description of Image">
+            </div>
+        </div>
+        <div class="carousel-slide">
+            <div class="carousel-content">
+                <h2>Próximamente, nuevos lanzamientos</h2>
+                <a href="https://open.spotify.com/intl-es/artist/1hSW0fGEl6NnWyHfW1CZ95?si=L_RYsuxYR3KMPKiNTRR8ZQ">Sígueme
+                    en Spotify</a>
+            </div>
+        </div>
+        <div class="carousel-slide">
+            <div class="carousel-content">
+                <h2>¡No te lo pierdas!</h2>
+                <a href="https://open.spotify.com/intl-es/artist/1hSW0fGEl6NnWyHfW1CZ95?si=L_RYsuxYR3KMPKiNTRR8ZQ">Escucha
+                    ahora</a>
+            </div>
+        </div>
+    </div>
+
+    <section id="valoraciones">
+        <h2>Deja tu Valoración</h2>
+        <form action="../Php/guardar_valoraciones.php" method="POST" class="valoraciones-form">
+            <input type="text" id="nombre" name="nombre_usuario" placeholder="Tu nombre" required>
+            <textarea id="comentario" name="comentario" placeholder="Si te ha gustado nuestro servicio, déjanos tu valoración" rows="5" required></textarea>
+            <input type="number" id="puntuacion" name="puntuacion" min="1" max="5" placeholder="1" required>
+            <button type="submit">Enviar valoración</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Sígueme en redes sociales:</p>
+        <div class="social-icons">
+            <a href="https://open.spotify.com/intl-es/artist/1hSW0fGEl6NnWyHfW1CZ95?si=L_RYsuxYR3KMPKiNTRR8ZQ"
+                target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Spotify_1.png"
+                    alt="Spotify"></a>
+            <a href="https://www.instagram.com/tu_usuario" target="_blank"><img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png"
+                    alt="Instagram"></a>
+            <a href="https://www.youtube.com/c/tu_usuario" target="_blank"><img
+                    src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube"></a>
+        </div>
+        <a href="">Términos y Condiciones</a>
+        <a href="">Políticas de Privacidad</a>
+        <p>&copy; 2024 IZETA. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>

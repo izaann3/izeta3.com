@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IZETA - Artista Emergente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Css/style.css">
+</head>
+
+<body>
+    <div class="carousel">
+        <div class="carousel-slide active">
+            <div class="carousel-content">
+                <h2>DESCUBRE MIS NUEVAS CANCIONES</h2>
+                <a href="https://open.spotify.com/intl-es/artist/1hSW0fGEl6NnWyHfW1CZ95?si=L_RYsuxYR3KMPKiNTRR8ZQ" target="_blank">Escúchame en Spotify</a>
+                <img class="background-image" src="Images/unnamed.jpg" alt="Description of Image">
+            </div>
+        </div>
+        <div class="carousel-slide">
+            <div class="carousel-content">
+                <h2>Próximamente, nuevos lanzamientos</h2>
+                <a href="https://open.spotify.com/intl-es/artist/1hSW0fGEl6NnWyHfW1CZ95?si=L_RYsuxYR3KMPKiNTRR8ZQ">Sígueme en Spotify</a>
+            </div>
+        </div>
+        <div class="carousel-slide">
+            <div class="carousel-content">
+                <h2>¡No te lo pierdas!</h2>
+                <a href="https://open.spotify.com/intl-es/artist/1hSW0fGEl6NnWyHfW1CZ95?si=L_RYsuxYR3KMPKiNTRR8ZQ">Escucha ahora</a>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#bio">Biografía</a>
+        <a href="#gallery">Galería</a>
+        <a href="#music">Música</a>
+        <a href="#contact">Contacto</a>
+        <a href="#valoraciones">Valoraciones</a>
+    </nav>
+
+    <section id="bio" class="bio">
+        <h2>Biografía</h2>
+        <p>Izan Lozano, o más conocido como IZETA3, es un pequeño artista de Badalona, Barcelona. Empezó cantando canciones de rap con temática de amor y desamor en un pequeño parque de su barrio y más tarde grabando su primer tema DIME en octubre de 2022. Apoyado por sus padres y familiares, actualmente se encuentra en un inmerso periodo de aprendizaje para la de creación de su primer EP y, con intenciones de prosperar.
+        </p>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h2>Galería</h2>
+        <div>
+            <img class="scale-image" src="Images/foto5.jpg" alt="Imagen de presentación 1">
+            <img class="scale-image" src="Images/foto3.jpg" alt="Imagen de presentación 2">
+            <img class="scale-image" src="Images/foto4.jpg" alt="Imagen de presentación 3">
+        </div>
+    </section>
+
+    <section id="music">
+        <h2>Música</h2>
+        <iframe src="https://open.spotify.com/embed/track/49s95d1dy2bSPtQqOMZfqD?utm_source=generator" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe src="https://open.spotify.com/embed/track/3T5cpIPm2TUxj4OI1YvP8o?utm_source=generator" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe src="https://open.spotify.com/embed/track/0GC2IA6Eigroj5sRVY78Wv?utm_source=generator" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe src="https://open.spotify.com/embed/track/6brk3fEv6nZLlSPQYwfcTB?utm_source=generator" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe src="https://open.spotify.com/embed/track/7DQ5KRpDyrm3z0c4DptlNr?utm_source=generator" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contacto</h2>
+        <p>¿Tienes alguna pregunta o simplemente quieres decir hola? ¡Escríbeme!</p>
+        <form action="Php/guardar_contacto.php" method="POST">
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+            <input type="email" name="correo" placeholder="Tu correo" required>
+            <textarea name="mensaje" rows="5"  placeholder="Tu mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    <script src="JavaScript/Contacto.js"></script>
+
+    <section id="valoraciones">
+        <h2>Deja tu Valoración</h2>
+        <form action="Php/guardar_valoraciones.php" method="POST" class="valoraciones-form">
+            <input type="text" id="nombre" name="nombre_usuario" placeholder="Tu nombre" required>
+            <textarea id="comentario" name="comentario" placeholder="Si te ha gustado nuestro servicio, déjanos tu valoración" rows="5" required></textarea>
+            <input type="number" id="puntuacion" name="puntuacion" min="1" max="5" placeholder="1" required>
+            <button type="submit">Enviar valoración</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Sígueme en redes sociales:</p>
+        <div class="social-icons">
+            <a href="https://open.spotify.com/intl-es/artist/1hSW0fGEl6NnWyHfW1CZ95?si=L_RYsuxYR3KMPKiNTRR8ZQ" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Spotify_1.png" alt="Spotify"></a>
+            <a href="https://www.instagram.com/tu_usuario" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png" alt="Instagram"></a>
+            <a href="https://www.youtube.com/c/tu_usuario" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube"></a>
+        </div>
+        <p>&copy; 2024 IZETA. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>
