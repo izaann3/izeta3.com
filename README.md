@@ -6,6 +6,9 @@
   </b>
 </samp>
 
+<a href="https://yourwebsite.com" style="display: inline-block; padding: 10px 20px; font-size: 16px; color: white; background-color: #000; border-radius: 8px; text-decoration: none; border: 2px solid white;">Enter the Website</a>
+
+
 <details>
 <summary>
   <samp>
