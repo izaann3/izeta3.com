@@ -6,8 +6,22 @@
   </b>
 </samp>
 
-<a href="https://yourwebsite.com" style="display: inline-block; padding: 10px 20px; font-size: 16px; color: white; background-color: #000; border-radius: 8px; text-decoration: none; border: 2px solid white;">Enter the Website</a>
-
+<p align="center">
+  <a href="https://yourwebsite.com" style="text-decoration: none;">
+    <button style="
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: black;
+      background-color: white;
+      border: 2px solid black;
+      border-radius: 8px;
+      cursor: pointer;
+    ">
+      Enter to izeta3.com
+    </button>
+  </a>
+</p>
 
 <details>
 <summary>
