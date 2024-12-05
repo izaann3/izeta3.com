@@ -50,11 +50,11 @@ hr {
     transition: opacity 0.5s ease-in-out;
 }
 
-.carousel-content {
+/*.carousel-content {
     background-color: rgba(30, 30, 30, 0.8);
     padding: 20px;
     border-radius: 10px;
-}
+}*/
 
 .carousel-content h2 {
     font-size: 36px;
@@ -232,19 +232,20 @@ section {
 }
 
 .contact button {
-    padding: 10px 20px;
-    background-color: #ff6f61;
+    font-weight: 700;
+    color: #1b3039;
+    padding: 9px 25px;
+    background: #eceff1;
     border: none;
-    color: #ffffff;
-    font-size: 18px;
+    border-radius: 50px;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: all 0.3s ease 0s;
 }
 
 .contact button:hover {
-    background-color: #ff4a3a;
-    transform: scale(1.05);
+    background-color: #e2f1f8;
+    color: #c269fd;
+    transform: scale(1.1);
 }
 
 /*separador*/
@@ -329,15 +330,6 @@ footer {
 
 /* Estilo para el apartado de valoraciones */
 /* Estilo para el apartado de valoraciones */
-#valoraciones {
-    background-color: #1e1e1e;
-    padding: 10px 10px;
-    border-radius: 10px;
-    margin: 20px auto;
-    max-width: 640px;
-    text-align: center;
-}
-
 .valoraciones-form {
     display: flex;
     flex-direction: column;
@@ -369,20 +361,20 @@ footer {
 }
 
 .valoraciones-form button {
-    padding: 10px 20px;
-    background-color: #ff6f61;
+    font-weight: 700;
+    color: #1b3039;
+    padding: 9px 25px;
+    background: #eceff1;
     border: none;
-    color: #ffffff;
-    font-size: 18px;
+    border-radius: 50px;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
-    margin-top: 15px;
+    transition: all 0.3s ease 0s;
 }
 
 .valoraciones-form button:hover {
-    background-color: #ff4a3a;
-    transform: scale(1.05);
+    background-color: #e2f1f8;
+    color: #c269fd;
+    transform: scale(1.1);
 }
 
 .header{
@@ -428,7 +420,7 @@ footer {
 }
 
 .header .nav-links li a:hover{
-    color: #ffbc0e;
+    color: #c269fd;
 }
 
 .header .btn button{
@@ -444,6 +436,69 @@ footer {
 
 .header .btn button:hover{
     background-color: #e2f1f8;
-    color: #ffbc0e;
+    color: #c269fd;
     transform: scale(1.1);
+}
+
+.go-top-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 4rem;
+    width: 4rem;
+    height: 4rem;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease, z-index 0.3s ease;
+}
+
+.go-top-button {
+    width: 2rem;
+    height: 2rem;
+    background: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.go-top-button:hover {
+    transform: scale(1.1);
+}
+
+.go-top-button i {
+    font-size: 1rem;
+    color: black;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.go-top-container.show {
+    z-index: 10;
+    opacity: 1;
+}
+
+.go-top-container.show .go-top-button i {
+    transform: scale(1);
+}
+
+
+@keyframes popup {
+    0%{
+        width: 0rem;
+        height: 0rem;
+    }
+    50%{
+        width: 5rem;
+        height: 5rem;
+    }
+    100%{
+        width: 4rem;
+        height: 4rem;
+    }
 }
