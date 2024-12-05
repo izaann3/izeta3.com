@@ -7,21 +7,11 @@
 </samp>
 
 <p align="center">
-  <a href="https://yourwebsite.com" style="text-decoration: none;">
-    <button style="
-      display: inline-block;
-      padding: 10px 20px;
-      font-size: 16px;
-      color: black;
-      background-color: white;
-      border: 2px solid black;
-      border-radius: 8px;
-      cursor: pointer;
-    ">
-      Enter to izeta3.com
-    </button>
+  <a href="https://yourwebsite.com">
+    <img src="https://img.shields.io/badge/Enter%20the%20Website-White?style=for-the-badge&logo=web" alt="Enter the Website">
   </a>
 </p>
+
 
 <details>
 <summary>
