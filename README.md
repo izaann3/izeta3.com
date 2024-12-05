@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://izaann3.github.io">
-    <img src="https://img.shields.io/badge/Enter%20the%20Website-FFFFFF?style=for-the-badge&logo=web&logoColor=black" alt="Enter to izeta3.com">
+    <img src="https://img.shields.io/badge/Enter%20to%20Wizeta3.com-FFFFFF?style=for-the-badge&logo=web&logoColor=black" alt="Enter to izeta3.com">
   </a>
 </p>
 
