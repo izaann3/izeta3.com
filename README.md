@@ -8,10 +8,9 @@
 
 <p align="center">
   <a href="https://yourwebsite.com">
-    <img src="https://img.shields.io/badge/Enter%20the%20Website-White?style=for-the-badge&logo=web" alt="Enter the Website">
+    <img src="https://img.shields.io/badge/Enter%20the%20Website-FFFFFF?style=for-the-badge&logo=web&logoColor=black" alt="Enter the Website">
   </a>
 </p>
-
 
 <details>
 <summary>
