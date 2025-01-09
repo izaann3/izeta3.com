@@ -550,3 +550,34 @@ footer {
   }
 }
 
+.header .nav-links a {
+    font-size: 700;
+    color: #eceff1;
+    text-decoration: none;
+    position: relative; /* Necesario para el subrayado */
+    display: inline-block;
+}
+
+.header .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Espaciado del subrayado respecto al texto */
+    width: 0;
+    height: 2px;
+    background-color: #c269fd;
+    transition: width 0.3s ease-in-out;
+}
+
+.header .nav-links a:hover::after {
+    width: 100%; /* Expande el subrayado al 100% */
+}
+
+.main-title {
+    text-align: center;
+}
+
+.section-title, .section-text {
+    text-align: left;
+}
+
