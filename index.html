@@ -11,6 +11,7 @@
     <link rel="icon" href="Images/ha.png" type="image/png">
     <script defer src="js/gotop.js"></script>
     <script src="js/scroll.js" defer></script>
+    <script src="js/subscribe.js" defer></script>
 </head>
 
 <body>
@@ -68,7 +69,13 @@
                 height="176" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
     </div>
-        
+     
+    <div class="newsletter-container">
+        <input type="email" id="email" placeholder="Suscríbete a nuestra newsletter" class="email-input">
+        <button class="subscribe-btn" onclick="subscribe()">Suscribir</button>
+        <div id="success-message" class="success-message"></div> 
+    </div>
+     
     <footer>
         <div class="separator"></div>
         <div class="footer-width-fixer">

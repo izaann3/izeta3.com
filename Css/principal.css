@@ -543,3 +543,91 @@ footer {
     text-align: left;
 }
 
+.newsletter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000; 
+  padding: 10px;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative
+}
+
+.email-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #000;
+  border-radius: 20px;
+  width: 42%;
+  margin-right: 10px;
+}
+
+.subscribe-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #000;
+  border: 1px solid white;
+  border-radius: 20px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease, border-color 0.4s ease;
+}
+
+.subscribe-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transition: 0.5s ease;
+}
+
+.subscribe-btn:hover::before {
+  left: 0;
+}
+
+.subscribe-btn:hover {
+  color: black;
+}
+
+.newsletter-text {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.success-message {
+  display: none;
+  background-color: #000;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s, transform 0.5s ease-in-out;
+  margin-left: 15px; /* Espacio entre el botón y el mensaje */
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+.success-message.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.subscribe-btn.subscribed {
+  background-color: #000; 
+  border-color: #000;
+  pointer-events: none;
+  color: white;
+}
+
