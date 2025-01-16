@@ -369,19 +369,18 @@ footer {
     margin: 0 15px;
 }
 
-.header .logotwo,
-.header .logo {
-    cursor: pointer;
+.header .logotwo img {
+    height: 40px;
+    width: auto;
+    transition: all 0.3s;
 }
 
-.header .logotwo img,
 .header .logo img {
     height: 70px;
     width: auto;
     transition: all 0.3s;
 }
 
-.header .logotwo img:hover,
 .header .logo img:hover {
     transform: scale(1.2);
 }

@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../Css/principal.css">
 </head>
-
+  
 <body>
     <header class="header">
         <div class="logo">
@@ -21,6 +21,11 @@
                 <li><a href="valoracion.html">VALORACIONES</a></li>
             </ul>
         </nav>
+        <div class="logotwo">
+            <a href="../Html/inicio_registro.html">
+                <img src="../Images/login(1).png" alt="login"> 
+            </a>
+        </div>
         <a class="btn" href="../Html/contacto.html"><button>Contacto</button></a>
     </header>
 
@@ -46,7 +51,7 @@
         <form action="../Php/guardar_iniciosesion.php" method="POST">
             <input type="text" name="usuario" placeholder="Tu usuario" required>
             <input type="email" name="correo" placeholder="Tu correo electronico" required>
-            <input type="contraseña" name="contraseña" placeholder="Tu contraseña" required>
+            <input type="password" name="contraseña" placeholder="Tu contraseña" required>
             <button type="submit">Iniciar Sesion</button>
             <p>¿No tienes cuenta? <a href="../Html/registro.html">Regístrate</a></p>
         </form>

@@ -33,7 +33,15 @@ if ($result->num_rows > 0) {
     $sql = "INSERT INTO usuarios (usuario, correo, contraseña) VALUES ('$usuario', '$correo', '$contraseña')";
     if ($conn->query($sql) === TRUE) {
         echo "Registro correcto.";
+        header('Location: http://localhost/Proyecto/index.html'); // Redirige a la página de inicio
+        exit(); // Asegúrate de detener la ejecución del script después de la redirección
     } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
+$conn->close();
+?>
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 }
