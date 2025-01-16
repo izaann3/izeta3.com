@@ -27,9 +27,18 @@
             </ul>            
         </nav>
         <div class="logotwo">
-            <a href="Html/inicio_registro.html">
-                <img src="Images/login(1).png" alt="login"> 
-            </a>
+            <?php 
+            session_start();
+            if (isset($_SESSION['usuario'])) {
+                // Si el usuario está logueado, muestra su nombre
+                echo "<span>Hola, " . htmlspecialchars($_SESSION['usuario']) . "</span>";
+            } else {
+                // Si el usuario no está logueado, muestra el ícono de login
+                echo '<a href="Html/inicio_registro.html">
+                        <img src="Images/login(1).png" alt="login"> 
+                      </a>';
+            }
+            ?>
         </div>
         <a class="btn" href="Html/contacto.html"><button>Contacto</button></a>
     </header>
