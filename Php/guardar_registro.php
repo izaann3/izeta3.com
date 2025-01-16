@@ -1,6 +1,6 @@
 <?php
-ini_set('display_errors',1);
-ini_set('display_startup_errors',1);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Conexión a la base de datos
@@ -19,8 +19,6 @@ if ($conn->connect_error) {
 $usuario = $_POST['usuario'];
 $correo = $_POST['correo'];
 $contraseña = password_hash($_POST['contraseña'], PASSWORD_DEFAULT);
-/*EL metodo hash sirve para proteger las contraseñas y 
-las convierte en un texto de caracteres que no se puede leer*/
 
 // Verificar si el usuario o correo ya existen
 $sql = "SELECT * FROM usuarios WHERE usuario = '$usuario' OR correo = '$correo'";
@@ -32,8 +30,11 @@ if ($result->num_rows > 0) {
     // Insertar nuevo usuario en la base de datos
     $sql = "INSERT INTO usuarios (usuario, correo, contraseña) VALUES ('$usuario', '$correo', '$contraseña')";
     if ($conn->query($sql) === TRUE) {
+        // Registro correcto, iniciar sesión automáticamente
+        session_start();
+        $_SESSION['username'] = $usuario; // Guardar el nombre de usuario en la sesión
         echo "Registro correcto.";
-        header('Location: http://localhost/Proyecto/index.html'); // Redirige a la página de inicio
+        header('Location: http://localhost/Proyecto/index.php'); // Redirige a la página de inicio
         exit(); // Asegúrate de detener la ejecución del script después de la redirección
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
@@ -42,9 +43,4 @@ if ($result->num_rows > 0) {
 
 $conn->close();
 ?>
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-}
 
-$conn->close();
-?>

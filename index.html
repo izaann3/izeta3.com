@@ -27,9 +27,13 @@
             </ul>            
         </nav>
         <div class="logotwo">
-            <a href="Html/inicio_registro.html">
-                <img src="Images/login(1).png" alt="login"> 
-            </a>
+            <?php if (isset($_SESSION['username'])): ?>
+                <span>Bienvenido, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
+            <?php else: ?>
+                <a href="Html/inicio_registro.html">
+                    <img src="Images/login(1).png" alt="login"> 
+                </a>
+            <?php endif; ?>
         </div>
         <a class="btn" href="Html/contacto.html"><button>Contacto</button></a>
     </header>
