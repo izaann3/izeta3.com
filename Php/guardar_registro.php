@@ -5,8 +5,8 @@ error_reporting(E_ALL);
 
 // Conexión a la base de datos
 $servername = "127.0.0.1";
-$username = "user";
-$password = "@Mvm2016";
+$username = "izeta3php";
+$password = "Camello@33";
 $dbname = "valoraciones_db";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
