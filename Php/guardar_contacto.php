@@ -5,7 +5,6 @@ error_reporting(E_ALL);
 
 include 'conexion.php';
 
-// Conectar a la base de datos
 $servername = "127.0.0.1";
 $username = "izeta3php";
 $password = "Camello@33";
@@ -18,12 +17,11 @@ if ($conn->connect_error) {
 }
 
 if (isset($_POST['nombre']) && isset($_POST['correo']) && isset($_POST['mensaje'])) {
-    // Recibir los datos de contactos y sacarlos para evitar errores.
+
     $nombre = $conn->real_escape_string($_POST['nombre']);
     $correo = $conn->real_escape_string($_POST['correo']);
     $mensaje = $conn->real_escape_string($_POST['mensaje']);
     
-    // Insertar los datos en la base de datos
     $sql = "INSERT INTO contacto (nombre, correo, mensaje) VALUES ('$nombre','$correo','$mensaje')";
     
     if ($conn->query($sql) === TRUE) {
@@ -35,6 +33,5 @@ if (isset($_POST['nombre']) && isset($_POST['correo']) && isset($_POST['mensaje'
     echo "Todos los campos son obligatorios.";
 }
 
-// Cerrar la conexión
 mysqli_close($conn);    
 ?>
