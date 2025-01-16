@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     if (password_verify($contraseña, $row['contraseña'])) {
         echo "Inicio de sesión correcto.";
-        header('Location: https:/izeta3.com/index.html');
+        header('Location: https://izeta3.com/index.html');
         exit();
     } else {
         echo "Contraseña incorrecta";
