@@ -340,25 +340,48 @@ footer {
     transform: scale(1.1);
 }
 
+
 .header {
     background-color: #000;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 85px;
-    padding: 5px 10%;
+    padding: 10px;
 }
 
+.logo {
+    flex: 0;
+}
+
+.logotwo, .btn {
+    flex: 0;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    flex: 1;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.header .logotwo,
 .header .logo {
     cursor: pointer;
 }
 
+.header .logotwo img,
 .header .logo img {
     height: 70px;
     width: auto;
     transition: all 0.3s;
 }
 
+.header .logotwo img:hover,
 .header .logo img:hover {
     transform: scale(1.2);
 }
