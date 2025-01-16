@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
     $sql = "INSERT INTO usuarios (usuario, correo, contraseña) VALUES ('$usuario', '$correo', '$contraseña')";
     if ($conn->query($sql) === TRUE) {
         echo "Registro correcto.";
-        header('Location: http://localhost/Proyecto/index.html');
+        header('Location: https:/izeta3.com/index.html');
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
