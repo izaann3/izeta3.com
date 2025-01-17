@@ -1,7 +1,9 @@
 <?php
-ini_set('display_errors',1);
-ini_set('display_startup_errors',1);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+session_start();
 
 include 'conexion.php';
 
@@ -26,8 +28,9 @@ $result = $conn->query($sql_check);
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     if (password_verify($contraseña, $row['contraseña'])) {
-        echo "Inicio de sesión correcto.";
-        header('Location: https://izeta3.com/index.html');
+        $_SESSION['usuario'] = $row['usuario'];
+        $_SESSION['correo'] = $row['correo'];
+        header('Location: https://izeta3.com/index.php');
         exit();
     } else {
         echo "Contraseña incorrecta";
@@ -38,8 +41,4 @@ if ($result->num_rows > 0) {
 
 $conn->close();
 ?>
-    echo "Usuario no encontrado.";
-}
 
-$conn->close();
-?>

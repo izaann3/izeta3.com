@@ -1,6 +1,6 @@
 <?php
-ini_set('display_errors',1);
-ini_set('display_startup_errors',1);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 $servername = "127.0.0.1";
@@ -16,29 +16,36 @@ if ($conn->connect_error) {
 
 $usuario = $_POST['usuario'];
 $correo = $_POST['correo'];
-$contraseña = password_hash($_POST['contraseña'], PASSWORD_DEFAULT);
+$contraseña = $_POST['contraseña'];
 
-$sql = "SELECT * FROM usuarios WHERE usuario = '$usuario' OR correo = '$correo'";
-$result = $conn->query($sql);
+$sql_check = "SELECT * FROM usuarios WHERE usuario = ? OR correo = ?";
+$stmt = $conn->prepare($sql_check);
+$stmt->bind_param("ss", $usuario, $correo);
+$stmt->execute();
+$result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
     echo "El usuario o correo ya están registrados.";
 } else {
-    $sql = "INSERT INTO usuarios (usuario, correo, contraseña) VALUES ('$usuario', '$correo', '$contraseña')";
-    if ($conn->query($sql) === TRUE) {
-        echo "Registro correcto.";
+    $contraseña_hash = password_hash($contraseña, PASSWORD_DEFAULT);
+
+    $sql_insert = "INSERT INTO usuarios (usuario, correo, contraseña) VALUES (?, ?, ?)";
+    $stmt_insert = $conn->prepare($sql_insert);
+    $stmt_insert->bind_param("sss", $usuario, $correo, $contraseña_hash);
+
+    if ($stmt_insert->execute()) {
+        session_start();
+        $_SESSION['usuario'] = $usuario;
+        $_SESSION['correo'] = $correo;
+
         header('Location: https://izeta3.com/index.php');
         exit();
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Error al registrar el usuario: " . $stmt_insert->error;
     }
 }
 
+$stmt->close();
 $conn->close();
 ?>
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-}
 
-$conn->close();
-?>

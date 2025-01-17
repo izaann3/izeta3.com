@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,7 +9,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IZETA3</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2 family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Css/principal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="icon" href="Images/ha.png" type="image/png">
@@ -30,17 +36,20 @@
             <?php 
             session_start();
             if (isset($_SESSION['usuario'])) {
-                // Si el usuario está logueado, muestra su nombre
-                echo "<span>Hola, " . htmlspecialchars($_SESSION['usuario']) . "</span>";
+                echo '<div class="user-info">
+		<img src="Images/login(1).png" alt="Foto de usuario" class="user-icon"> 
+                <span class="username">' . htmlspecialchars($_SESSION['usuario']) . '</span>
+                <a href="Php/cerrar_sesion.php">
+                	<img src="Images/logout.png" class="cerrasesion">
+              </div>';
             } else {
-                // Si el usuario no está logueado, muestra el ícono de login
                 echo '<a href="Html/inicio_registro.html">
                         <img src="Images/login(1).png" alt="login"> 
                       </a>';
             }
             ?>
         </div>
-        <a class="btn" href="Html/contacto.html"><button>Contacto</button></a>
+        <a class="btn" href="Html/contacto.html"><button>CONTACTO</button></a>
     </header>
 
     <div class="loader">
@@ -100,13 +109,14 @@
                 <a href="https://music.apple.com/us/artist/izaann3/1647839316" target="_blank"><img src="Images/apple.png" alt="Apple Music"></a>
             </div>
             <div class="footer-links">
-                <a href="#">Términos y condiciones</a>
+            
+                <a href="#" class="footer-pages">Términos y condiciones</a>
                 <span class="divider">|</span>
-                <a href="Html/politica_privacidad.html">Políticas de Privacidad</a>
+                <a href="Html/politica_privacidad.html" class="footer-pages">Políticas de Privacidad</a>
                 <span class="divider">|</span>
-                <a href="#">Políticas de Cookies</a>
+                <a href="#" class="footer-pages">Políticas de Cookies</a>
                 <span class="divider">|</span>
-                <a href="#">Aviso Legal</a>
+                <a href="#" class="footer-pages">Aviso Legal</a>
             </div>
             <div class="footer-copyright">
                 <p>Copyright © 2024 IZETA3 - Todos los derechos reservados</p>
