@@ -353,6 +353,7 @@ footer {
     color: #c269fd;
 }
 
+/* Estilo del header */
 .header {
     background-color: #000;
     display: flex;
@@ -360,9 +361,20 @@ footer {
     align-items: center;
     height: 85px;
     padding: 10px;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: opacity 0.3s ease-out, top 0.3s ease-out;
+    opacity: 1;
 }
 
+/* Cuando el header se oculta */
+header.hidden {
+    opacity: 0;
+    top: -85px;
+}
 .logo {
     flex: 0;
     margin-right: 140px;
@@ -384,8 +396,10 @@ footer {
 }
 
 .header .logotwo img {
-    height: 40px;
+    height: 32px;
     width: auto;
+    margin-left: -4px;
+    margin-right: -5px;
     transition: all 0.3s;
 }
 
@@ -699,8 +713,8 @@ footer {
 }
 
 .logotwo img.cerrasesion {
-    width: 35px;
-    height: 35px;
-    margin-top: 4px;
+    width: 25px;
+    height: 25px;
+    margin-top: 5px;
 }
 

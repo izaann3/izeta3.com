@@ -18,6 +18,7 @@ session_start();
     <script defer src="js/gotop.js"></script>
     <script src="js/scroll.js" defer></script>
     <script src="js/subscribe.js" defer></script>
+    <script src="js/scroll_header.js" defer></script>
 </head>
 
 <body>
