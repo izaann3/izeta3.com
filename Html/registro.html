@@ -12,6 +12,7 @@
     <script defer src="js/gotop.js"></script>
     <script src="js/scroll.js" defer></script>
     <script src="js/subscribe.js" defer></script>
+    <script src="js/scroll_header.js" defer></script>
 
 </head>
 
@@ -58,6 +59,10 @@
             <input type="text" name="usuario" placeholder="Tu usuario" required> 
             <input type="email" name="correo" placeholder="Tu correo electrónico" required> 
             <input type="password" name="contraseña" placeholder="Tu contraseña" required>
+  	    <div class="checkbox">
+            	<input type="checkbox" name="terminos" id="terminos" required>
+            	<label for="terminos">Acepto los <a href="terminos.html" target="_blank">términos y condiciones</a></label>
+            </div>
             <button type="submit">Registrarse</button> 
         </form> 
     </section>
@@ -76,7 +81,7 @@
                         src="../Images/apple.png" alt="Apple Music"></a>
             </div>
             <div class="footer-links">
-                <a href="#">Términos y condiciones</a>
+                <a href="terminos.html">Términos y condiciones</a>
                 <span class="divider">|</span>
                 <a href="politica_privacidad.html">Políticas de Privacidad</a>
                 <span class="divider">|</span>

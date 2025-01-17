@@ -18,6 +18,13 @@ $usuario = $_POST['usuario'];
 $correo = $_POST['correo'];
 $contraseña = $_POST['contraseña'];
 
+if (!isset($_POST['terminos'])) {
+    session_start();
+    $_SESSION['error'] = "Debes aceptar los términos y condiciones para registrarte.";
+    header("Location: ../Html/inicio_registro.html");
+    exit();
+}
+
 $sql_check = "SELECT * FROM usuarios WHERE usuario = ? OR correo = ?";
 $stmt = $conn->prepare($sql_check);
 $stmt->bind_param("ss", $usuario, $correo);

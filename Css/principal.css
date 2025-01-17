@@ -203,6 +203,17 @@ section {
     outline: none;
 }
 
+.contact p a {
+    text-decoration: none;
+    color: #c269fd; 
+    transition: text-decoration 0.8s ease;
+}
+
+.contact p a:hover {
+    text-decoration: underline;
+}
+
+
 .contact button {
     font-family: var(--font-family);
     font-weight: 700;
@@ -718,3 +729,29 @@ header.hidden {
     margin-top: 5px;
 }
 
+.checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-right: 486px;
+}
+
+.checkbox input {
+    margin-right: -305px;
+}
+
+.checkbox label {
+    font-size: 14px;
+    display: inline-block;
+}
+
+.checkbox a {
+    color: #c269fd;
+    text-decoration: none;
+}
+
+.checkbox a:hover {
+    text-decoration: underline;
+}

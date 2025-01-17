@@ -111,7 +111,7 @@ session_start();
             </div>
             <div class="footer-links">
             
-                <a href="#" class="footer-pages">Términos y condiciones</a>
+                <a href="Html/terminos.html" class="footer-pages">Términos y condiciones</a>
                 <span class="divider">|</span>
                 <a href="Html/politica_privacidad.html" class="footer-pages">Políticas de Privacidad</a>
                 <span class="divider">|</span>
