@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+if (isset($_SESSION['usuario']) && !isset($_SESSION['popup_mostrado'])) {
+    $_SESSION['popup_mostrado'] = true; 
+}
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +15,7 @@ session_start();
     <title>IZETA3</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2 family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Css/principal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="icon" href="Images/ha.png" type="image/png">
@@ -19,6 +23,7 @@ session_start();
     <script src="js/scroll.js" defer></script>
     <script src="js/subscribe.js" defer></script>
     <script src="js/scroll_header.js" defer></script>
+    <script src="js/popup.js" defer></script>
 </head>
 
 <body>
@@ -28,7 +33,7 @@ session_start();
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="/index.html">INICIO</a></li>
+                <li><a href="/index.php">INICIO</a></li>
                 <li><a href="#music">MÚSICA</a></li>
                 <li><a href="Html/valoracion.html">VALORACIONES</a></li>
             </ul>            
@@ -37,12 +42,13 @@ session_start();
             <?php 
             session_start();
             if (isset($_SESSION['usuario'])) {
-                echo '<div class="user-info">
-		<img src="Images/login(1).png" alt="Foto de usuario" class="user-icon"> 
-                <span class="username">' . htmlspecialchars($_SESSION['usuario']) . '</span>
-                <a href="Php/cerrar_sesion.php">
-                	<img src="Images/logout.png" class="cerrasesion">
-              </div>';
+                echo '<div class="user-info" id="usuario-logueado">
+                    <img src="Images/login(1).png" alt="Foto de usuario" class="user-icon"> 
+                    <span class="username">' . htmlspecialchars($_SESSION['usuario']) . '</span>
+                    <a href="Php/cerrar_sesion.php">
+                        <img src="Images/logout.png" class="cerrasesion">
+                    </a>
+                </div>';
             } else {
                 echo '<a href="Html/inicio_registro.html">
                         <img src="Images/login(1).png" alt="login"> 
@@ -53,6 +59,21 @@ session_start();
         <a class="btn" href="Html/contacto.html"><button>CONTACTO</button></a>
     </header>
 
+    <div id="popup" class="popup" style="display: none;">
+        <div class="popup-content">
+            <button class="close-btn" onclick="cerrarPopup()">&times;</button>
+            <h2>¡AHORA YA ERES UN VERDADERO FAN!</h2>
+            <p>Como usuario registrado, te dejamos una pequeña preview de su proximo lanzamiento.</p>
+            <a href="Php/descargar_recompensa.php" class="download-btn">DESCARGAR</a>
+        </div>
+    </div>
+
+    <div class="loader">
+        <span class="loader__element"></span>
+        <span class="loader__element"></span>
+        <span class="loader__element"></span>
+    </div>
+    
     <div class="loader">
         <span class="loader__element"></span>
         <span class="loader__element"></span>
@@ -99,7 +120,7 @@ session_start();
         <button class="subscribe-btn" onclick="subscribe()">Suscribir</button>
         <div id="success-message" class="success-message"></div> 
     </div>
-     
+
     <footer>
         <div class="separator"></div>
         <div class="footer-width-fixer">
@@ -110,7 +131,6 @@ session_start();
                 <a href="https://music.apple.com/us/artist/izaann3/1647839316" target="_blank"><img src="Images/apple.png" alt="Apple Music"></a>
             </div>
             <div class="footer-links">
-            
                 <a href="Html/terminos.html" class="footer-pages">Términos y condiciones</a>
                 <span class="divider">|</span>
                 <a href="Html/politica_privacidad.html" class="footer-pages">Políticas de Privacidad</a>
