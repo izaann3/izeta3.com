@@ -1,17 +1,19 @@
 window.onload = function() {
-    // Verifica si el popup ya ha sido mostrado en la sesión de PHP
-    <?php if (isset($_SESSION['popup_mostrado'])): ?>
-        console.log("El popup ya se mostró en esta sesión.");
-    <?php else: ?>
-        // Muestra el popup si no se ha mostrado en esta sesión
-        if (document.getElementById('usuario-logueado')) {
-            document.getElementById('popup').style.display = 'flex';
-            document.getElementById('popup-overlay').style.display = 'block';
-        }
-    <?php endif; ?>
+    console.log("Verificando si el popup ya fue mostrado...");
+
+    if (document.getElementById('usuario-logueado') && !localStorage.getItem('popup_mostrado')) {
+        console.log("El popup no ha sido mostrado aún. Mostrando popup...");
+
+        document.getElementById('popup').style.display = 'flex';
+        document.getElementById('popup-overlay').style.display = 'block';
+
+        localStorage.setItem('popup_mostrado', 'true');
+        console.log("Popup mostrado y almacenado en localStorage.");
+    } else {
+        console.log("El popup ya se ha mostrado o el usuario no está logueado.");
+    }
 }
 
-// Función para cerrar el popup
 function cerrarPopup() {
     document.getElementById('popup').style.display = 'none';
     document.getElementById('popup-overlay').style.display = 'none';
