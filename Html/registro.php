@@ -25,15 +25,28 @@
             <ul class="nav-links">
                 <li><a href="../index.php">INICIO</a></li>
                 <li><a href="../index.php#music">MÚSICA</a></li>
-                <li><a href="valoracion.html">VALORACIONES</a></li>
+                <li><a href="valoracion.php">VALORACIONES</a></li>
             </ul>
         </nav>
         <div class="logotwo">
-            <a href="../Html/inicio_registro.html">
-                <img src="../Images/login(1).png" alt="login"> 
-            </a>
+            <?php 
+            session_start();
+            if (isset($_SESSION['usuario'])) {
+                echo '<div class="user-info" id="usuario-logueado">
+                    <img src="../Images/login(1).png" alt="Foto de usuario" class="user-icon"> 
+                    <span class="username">' . htmlspecialchars($_SESSION['usuario']) . '</span>
+                    <a href="../Php/cerrar_sesion.php">
+                        <img src="../Images/logout.png" class="cerrasesion">
+                    </a>
+                </div>';
+            } else {
+                echo '<a href="inicio_registro.php">
+                        <img src="../Images/login(1).png" alt="login"> 
+                      </a>';
+            }
+            ?>
         </div>
-        <a class="btn" href="../Html/contacto.html"><button>CONTACTO</button></a>
+        <a class="btn" href="contacto.php"><button>CONTACTO</button></a>
     </header>
 
     <div class="carousel">
@@ -70,24 +83,20 @@
     <footer>
         <div class="separator"></div>
         <div class="footer-width-fixer">
-            <div class="social-icons">
-                <a href="https://open.spotify.com/artist/1hSW0fGEl6NnWyHfW1CZ95" target="_blank"><img
-                        src="../Images/spotify.png" alt="Spotify"></a>
-                <a href="https://www.instagram.com/_.izaann3/" target="_blank"><img src="../Images/insta.png"
-                        alt="Instagram"></a>
-                <a href="https://www.youtube.com/@_izaann3/" target="_blank"><img src="../Images/yt.png"
-                        alt="YouTube"></a>
-                <a href="https://music.apple.com/us/artist/izaann3/1647839316" target="_blank"><img
-                        src="../Images/apple.png" alt="Apple Music"></a>
+           <div class="social-icons">
+                <a href="https://open.spotify.com/artist/1hSW0fGEl6NnWyHfW1CZ95" target="_blank"><img src="../Images/spotify.png" alt="Spotify"></a>
+                <a href="https://www.instagram.com/_.izaann3/" target="_blank"><img src="../Images/insta.png" alt="Instagram"></a>
+                <a href="https://www.youtube.com/@_izaann3/" target="_blank"><img src="../Images/yt.png" alt="YouTube"></a>
+                <a href="https://music.apple.com/us/artist/izaann3/1647839316" target="_blank"><img src="../Images/apple.png" alt="Apple Music"></a>
             </div>
             <div class="footer-links">
-                <a href="terminos.html">Términos y condiciones</a>
+                <a href="terminos.php" class="footer-pages">Términos y condiciones</a>
                 <span class="divider">|</span>
-                <a href="politica_privacidad.html">Políticas de Privacidad</a>
+                <a href="politica_privacidad.php" class="footer-pages">Políticas de Privacidad</a>
                 <span class="divider">|</span>
-                <a href="#">Políticas de Cookies</a>
+                <a href="#" class="footer-pages">Políticas de Cookies</a>
                 <span class="divider">|</span>
-                <a href="#">Aviso Legal</a>
+                <a href="#" class="footer-pages">Aviso Legal</a>
             </div>
             <div class="footer-copyright">
                 <p>Copyright © 2024 IZETA3 - Todos los derechos reservados</p>

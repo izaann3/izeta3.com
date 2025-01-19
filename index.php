@@ -35,7 +35,7 @@ if (isset($_SESSION['usuario']) && !isset($_SESSION['popup_mostrado'])) {
             <ul class="nav-links">
                 <li><a href="/index.php">INICIO</a></li>
                 <li><a href="#music">MÚSICA</a></li>
-                <li><a href="Html/valoracion.html">VALORACIONES</a></li>
+                <li><a href="Html/valoracion.php">VALORACIONES</a></li>
             </ul>            
         </nav>
         <div class="logotwo">
@@ -50,13 +50,13 @@ if (isset($_SESSION['usuario']) && !isset($_SESSION['popup_mostrado'])) {
                     </a>
                 </div>';
             } else {
-                echo '<a href="Html/inicio_registro.html">
+                echo '<a href="Html/inicio_registro.php">
                         <img src="Images/login(1).png" alt="login"> 
                       </a>';
             }
             ?>
         </div>
-        <a class="btn" href="Html/contacto.html"><button>CONTACTO</button></a>
+        <a class="btn" href="Html/contacto.php"><button>CONTACTO</button></a>
     </header>
 
     <div id="popup" class="popup" style="display: none;">
@@ -131,9 +131,9 @@ if (isset($_SESSION['usuario']) && !isset($_SESSION['popup_mostrado'])) {
                 <a href="https://music.apple.com/us/artist/izaann3/1647839316" target="_blank"><img src="Images/apple.png" alt="Apple Music"></a>
             </div>
             <div class="footer-links">
-                <a href="Html/terminos.html" class="footer-pages">Términos y condiciones</a>
+                <a href="Html/terminos.php" class="footer-pages">Términos y condiciones</a>
                 <span class="divider">|</span>
-                <a href="Html/politica_privacidad.html" class="footer-pages">Políticas de Privacidad</a>
+                <a href="Html/politica_privacidad.php" class="footer-pages">Políticas de Privacidad</a>
                 <span class="divider">|</span>
                 <a href="#" class="footer-pages">Políticas de Cookies</a>
                 <span class="divider">|</span>
@@ -144,8 +144,6 @@ if (isset($_SESSION['usuario']) && !isset($_SESSION['popup_mostrado'])) {
             </div>
         </div>
     </footer>
-    
 </body>
-
 </html>
 
