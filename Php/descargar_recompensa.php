@@ -12,7 +12,9 @@ $rutas = [
 ];
 
 $file_name = 'UN_PREVIEW.wav';
-$key = 'f8435d3de7bf9cdd37d4d3c1aec451a5';
+
+$dotenv = parse_ini_file(__DIR__ . '/.env');
+$key = $dotenv['ENCRYPTION_KEY'];
 
 $encrypted_file_path = null;
 

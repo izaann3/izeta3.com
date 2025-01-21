@@ -5,18 +5,7 @@ error_reporting(E_ALL);
 
 session_start();
 
-include 'conexion.php';
-
-$servername = "127.0.0.1";
-$username = "izeta3php";
-$password = "Camello@33";
-$dbname = "valoraciones_db";
-
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-if (!$conn) {
-    die("Conexión fallida: " . mysqli_connect_error());
-}
+require 'include.php';
 
 $usuario = $_POST['usuario'];
 $correo = $_POST['correo'];

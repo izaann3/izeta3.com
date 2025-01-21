@@ -3,16 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$servername = "127.0.0.1";
-$username = "izeta3php";
-$password = "Camello@33";
-$dbname = "valoraciones_db";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
-}
+require 'include.php';
 
 $usuario = $_POST['usuario'];
 $correo = $_POST['correo'];
@@ -21,7 +12,7 @@ $contraseña = $_POST['contraseña'];
 if (!isset($_POST['terminos'])) {
     session_start();
     $_SESSION['error'] = "Debes aceptar los términos y condiciones para registrarte.";
-    header("Location: ../Html/inicio_registro.html");
+    header("Location: ../Html/inicio_registro.php");
     exit();
 }
 

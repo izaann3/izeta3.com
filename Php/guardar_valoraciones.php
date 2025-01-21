@@ -3,18 +3,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include 'conexion.php';
+require 'include.php';
 
-$servername = "127.0.0.1";
-$username = "izeta3php";
-$password = "Camello@33";
-$dbname = "valoraciones_db";
-
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-if (!$conn) {
-    die("Conexión fallida: " . mysqli_connect_error());
-}
 
 if (!empty($_POST['nombre_usuario']) && !empty($_POST['comentario']) &&
 !empty($_POST['puntuacion'])) {

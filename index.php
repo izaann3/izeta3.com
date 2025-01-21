@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+require 'include.php';
+
 if (isset($_SESSION['usuario']) && !isset($_SESSION['popup_mostrado'])) {
     $_SESSION['popup_mostrado'] = true; 
 }
