@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 session_start();
 
-require 'include.php';
+require 'conexion.php';
 
 $usuario = $_POST['usuario'];
 $correo = $_POST['correo'];
