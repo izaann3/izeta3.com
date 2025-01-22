@@ -75,7 +75,7 @@
             <input type="password" name="contraseña" placeholder="Tu contraseña" required>
   	    <div class="checkbox">
             	<input type="checkbox" name="terminos" id="terminos" required>
-            	<label for="terminos">Acepto los <a href="terminos.html" target="_blank">términos y condiciones</a></label>
+            	<label for="terminos">Acepto los <a href="terminos.php" target="_blank">términos y condiciones</a></label>
             </div>
             <button type="submit">Registrarse</button> 
         </form> 
