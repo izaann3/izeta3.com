@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2 family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../Css/principal.css">
+    <link rel="icon" href="../Images/ha.png" type="image/png">
     <script defer src="../js/gotop.js"></script>
     <script src="../js/scroll.js" defer></script>
     <script src="../js/subscribe.js" defer></script>
@@ -49,21 +50,21 @@
         <a class="btn" href="contacto.php"><button>CONTACTO</button></a>
     </header>
 
-    <div class="carousel">
-        <div class="carousel-slide active">
-            <div class="carousel-content">
-                <img class="background-image" src="../Images/unnamed.jpg" alt="Description of Image">
-            </div>
-        </div>
-        <div class="carousel-slide">
-            <div class="carousel-content">
-            </div>
-        </div>
-        <div class="carousel-slide">
-            <div class="carousel-content">
-            </div>
-        </div>
+    <div class="loader">
+        <span class="loader__element"></span>
+        <span class="loader__element"></span>
+        <span class="loader__element"></span>
     </div>
+    
+    <div class="loader">
+        <span class="loader__element"></span>
+        <span class="loader__element"></span>
+        <span class="loader__element"></span>
+    </div>
+
+    <video width="1920" height="1080" autoplay muted loop>
+        <source src="../Images/iz3home.mp4" type="video/mp4">
+    </video>
 
     <section id="login" class="contact">
         <h2>REGÍSTRATE</h2> 

@@ -86,19 +86,9 @@ if (isset($_SESSION['usuario']) && !isset($_SESSION['popup_mostrado'])) {
         </div>
     </div>
 
-    <div class="carousel">
-        <div class="carousel-slide active">
-            <div class="carousel-content">
-                <img class="background-image" src="Images/unnamed.jpg" alt="Imagen de fondo">
-            </div>
-        </div>
-        <div class="carousel-slide">
-            <div class="carousel-content"></div>
-        </div>
-        <div class="carousel-slide">
-            <div class="carousel-content"></div>
-        </div>
-    </div>
+    <video width="1920" height="1080" autoplay muted loop>
+        <source src="Images/iz3home.mp4" type="video/mp4">
+    </video>
 
     <div class="youtube-video">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/e3_kpaVrAX4?si=1_o2Jfv1_vVEXhob"

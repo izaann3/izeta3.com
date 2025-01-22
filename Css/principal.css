@@ -16,66 +16,6 @@ hr {
     align-items: center;
 }
 
-.background-image {
-    position: absolute;
-    top: 0; 
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: blur(2px);
-    z-index: -1;
-}
-
-.scale-image {
-    width: auto; 
-    height: auto; 
-}
-
-.carousel {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-}
-
-.carousel-slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.carousel-slide.active {
-    display: flex;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.carousel-content h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.carousel-content a {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #ff6f61;
-    color: #ffffff;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 18px;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.carousel-content a:hover {
-    background-color: #ff4a3a;
-    transform: scale(1.05);
-}
 
 .sidenav {
     height: 100%;
@@ -205,7 +145,7 @@ section {
 
 .contact p a {
     text-decoration: none;
-    color: #c269fd; 
+    color: #cd853f; 
     transition: text-decoration 0.8s ease;
 }
 
@@ -228,7 +168,7 @@ section {
 
 .contact button:hover {
     background-color: #e2f1f8;
-    color: #c269fd;
+    color: #cd853f;
 }
 
 .separator {
@@ -285,7 +225,7 @@ footer {
 }
 
 .footer-links .footer-pages:hover {
-	color: #c269fd;
+	color: #cd853f;
 }
 
 .divider {
@@ -361,7 +301,7 @@ footer {
 
 .valoraciones-form button:hover {
     background-color: #e2f1f8;
-    color: #c269fd;
+    color: #cd853f;
 }
 
 /* Estilo del header */
@@ -440,7 +380,7 @@ header.hidden {
 }
 
 .header .nav-links li a:hover {
-    color: #c269fd;
+    color: #cd853f;
 }
 
 .header .btn button {
@@ -458,7 +398,7 @@ header.hidden {
 
 .header .btn button:hover {
     background-color: #e2f1f8;
-    color: #c269fd;
+    color: #cd853f;
 }
 
 .go-top-container {
@@ -586,7 +526,7 @@ header.hidden {
     bottom: -5px;
     width: 0;
     height: 2px;
-    background-color: #c269fd;
+    background-color: #cd853f;
     transition: width 0.3s ease-in-out;
 }
 
@@ -748,7 +688,7 @@ header.hidden {
 }
 
 .checkbox a {
-    color: #c269fd;
+    color: #cd853f;
     text-decoration: none;
 }
 
@@ -818,7 +758,7 @@ header.hidden {
 
 .download-btn:hover {
     background-color: #e2f1f8;
-    color: #c269fd;
+    color: #cd853f;
 }
 
 
