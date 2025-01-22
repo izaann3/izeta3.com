@@ -29,7 +29,7 @@ if (isset($_SESSION['usuario']) && !isset($_SESSION['popup_mostrado'])) {
 <body>
     <header class="header">
         <div class="logo">
-            <img src="Images/ha.png" alt="Logo">
+            <img src="Images/iz3logo.png" alt="Logo">
         </div>
         <nav>
             <ul class="nav-links">

@@ -328,7 +328,8 @@ header.hidden {
 }
 .logo {
     flex: 0;
-    margin-right: 140px;
+    margin-top: 5px;
+    margin-right: 80px;
 }
 
 .logotwo, .btn {
@@ -355,7 +356,7 @@ header.hidden {
 }
 
 .header .logo img {
-    height: 70px;
+    height: 40px;
     width: auto;
     transition: all 0.3s;
     

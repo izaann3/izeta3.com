@@ -20,7 +20,7 @@
 <body>
     <header class="header">
         <div class="logo">
-            <img src="../Images/ha.png">
+            <img src="../Images/iz3logo.png">
         </div>
         <nav>
             <ul class="nav-links">
