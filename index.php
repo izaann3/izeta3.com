@@ -86,7 +86,7 @@ if (isset($_SESSION['usuario']) && !isset($_SESSION['popup_mostrado'])) {
         </div>
     </div>
 
-    <video width="1920" height="1080" autoplay muted loop>
+    <video autoplay muted loop id="background-video">
         <source src="Images/iz3home.mp4" type="video/mp4">
     </video>
 
