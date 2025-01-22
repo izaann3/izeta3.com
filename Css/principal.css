@@ -1,3 +1,4 @@
+
 :root {
     --font-family: 'Poppins', sans-serif;
 }
@@ -742,8 +743,8 @@ header.hidden {
 }
 
 .download-btn {
-    position: absolute; /* Posición absoluta para moverlo cerca del borde inferior */
-    bottom: 30px; /* Espacio respecto al borde inferior del popup */
+    position: absolute;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     font-family: var(--font-family);
