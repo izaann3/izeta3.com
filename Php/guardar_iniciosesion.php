@@ -7,12 +7,15 @@ session_start();
 
 require 'conexion.php';
 
-$usuario = $_POST['usuario'];
-$correo = $_POST['correo'];
+$identificador = $_POST['identificador'];
 $contraseña = $_POST['contraseña'];
 
-$sql_check = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND correo = '$correo'";
-$result = $conn->query($sql_check);
+$sql_check = "SELECT * FROM usuarios WHERE (usuario = ? OR correo = ?)";
+$stmt = $conn->prepare($sql_check);
+$stmt->bind_param("ss", $identificador, $identificador);
+$stmt->execute();
+$result = $stmt->get_result();
+
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();

@@ -67,7 +67,10 @@ if (isset($_SESSION['usuario']) && !isset($_SESSION['popup_mostrado'])) {
             <a href="Php/descargar_recompensa.php" class="download-btn">DESCARGAR</a>
         </div>
     </div>
-
+<div class="scroll-container">
+        <p class="scroll-text">Scroll me</p>
+        <div class="scroll-arrow"></div>
+</div>
     <div class="loader">
         <span class="loader__element"></span>
         <span class="loader__element"></span>
