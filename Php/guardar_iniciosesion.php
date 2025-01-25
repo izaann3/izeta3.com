@@ -21,7 +21,6 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
 
     if (password_verify($contraseña, $row['contraseña'])) {
-        
         $token = bin2hex(random_bytes(32));
         $expiracion = date('Y-m-d H:i:s', strtotime('+1 hour'));
 
@@ -38,14 +37,20 @@ if ($result->num_rows > 0) {
             header('Location: https://izeta3.com/index.php');
             exit();
         } else {
-            echo "Error al generar el token";
+            $_SESSION['error'] = "Error al generar el token.";
+            header("Location: ../Html/inicio_registro.php");
+            exit();
         }
 
     } else {
-        echo "Contraseña incorrecta";
+        $_SESSION['error'] = "La <strong>contraseña</strong> es incorrecta.";
+        header("Location: ../Html/inicio_registro.php");
+        exit();
     }
 } else {
-    echo "Usuario no encontrado.";
+    $_SESSION['error'] = "El <strong>usuario</strong> o <strong>correo</strong> no existe.";
+    header("Location: ../Html/inicio_registro.php");
+    exit();
 }
 
 $conn->close();

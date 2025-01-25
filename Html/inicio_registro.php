@@ -67,8 +67,14 @@
 
     <section id="contact" class="contact">
         <h2>INICIO DE SESION</h2>
-        <p></p>
+        <p>Por favor introduce tu usuario o correo electrónico y contraseña:</p>
         <form action="../Php/guardar_iniciosesion.php" method="POST">
+            <?php 
+            if (isset($_SESSION['error'])) {
+                echo '<div class="alert-message error">' . $_SESSION['error'] . '</div>';
+                unset($_SESSION['error']);
+            }
+            ?>
             <input type="text" name="identificador" placeholder="Usuario o correo electrónico" required>
             <input type="password" name="contraseña" placeholder="Tu contraseña" required>
             <button type="submit">Iniciar Sesión</button>

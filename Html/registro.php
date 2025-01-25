@@ -4,17 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrarse - IZETA3</title>
+    <title>Crear cuenta - IZETA3</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2 family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../Css/principal.css">
     <link rel="icon" href="../Images/ha.png" type="image/png">
     <script defer src="../js/gotop.js"></script>
     <script src="../js/scroll.js" defer></script>
     <script src="../js/subscribe.js" defer></script>
     <script src="../js/scroll_header.js" defer></script>
-
 </head>
 
 <body>
@@ -55,7 +54,7 @@
         <span class="loader__element"></span>
         <span class="loader__element"></span>
     </div>
-    
+
     <div class="loader">
         <span class="loader__element"></span>
         <span class="loader__element"></span>
@@ -67,15 +66,22 @@
     </video>
 
     <section id="login" class="contact">
-        <h2>REGÍSTRATE</h2> 
-        <p></p> 
-        <form action="../Php/guardar_registro.php" method="POST"> 
+        <h2>REGISTRO</h2>
+        <p>Rellene los siguientes datos:</p> 
+        <form action="../Php/guardar_registro.php" method="POST">  
+            <?php 
+            if (isset($_SESSION['error'])) {
+                echo '<div class="alert-message error">' . $_SESSION['error'] . '</div>';
+                unset($_SESSION['error']);
+            }
+            ?>
             <input type="text" name="usuario" placeholder="Tu usuario" required> 
             <input type="email" name="correo" placeholder="Tu correo electrónico" required> 
             <input type="password" name="contraseña" placeholder="Tu contraseña" required>
-  	    <div class="checkbox">
-            	<input type="checkbox" name="terminos" id="terminos" required>
-            	<label for="terminos">Acepto los <a href="terminos.php" target="_blank">términos y condiciones</a></label>
+            
+            <div class="checkbox">
+                <input type="checkbox" name="terminos" id="terminos" required>
+                <label for="terminos">Acepto los <a href="terminos.php" target="_blank">términos y condiciones</a></label>
             </div>
             <button type="submit">Registrarse</button> 
         </form> 
