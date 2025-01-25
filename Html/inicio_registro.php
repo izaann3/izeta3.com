@@ -12,7 +12,7 @@
     <link rel="icon" href="../Images/ha.png" type="image/png">
     <script defer src="../js/gotop.js"></script>
     <script src="../js/scroll.js" defer></script>
-    <script src="../js/subscribe.js" defer></script>
+    <script src="../js/error.js" defer></script>
     <script src="../js/scroll_header.js" defer></script>
 </head>
   
