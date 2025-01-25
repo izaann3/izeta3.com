@@ -14,6 +14,7 @@
     <script src="../js/scroll.js" defer></script>
     <script src="../js/error.js" defer></script>
     <script src="../js/scroll_header.js" defer></script>
+    <script src="../js/clickeye.js" defer></script>
 </head>
 
 <body>
@@ -75,10 +76,14 @@
                 unset($_SESSION['error']);
             }
             ?>
-            <input type="text" name="usuario" placeholder="Tu usuario" required> 
-            <input type="email" name="correo" placeholder="Tu correo electrónico" required> 
-            <input type="password" name="contraseña" placeholder="Tu contraseña" required>
-            
+            <input type="text" name="usuario" placeholder="Usuario" required> 
+            <input type="email" name="correo" placeholder="Correo electrónico" required> 
+            <div class="password-container">
+                <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
+                <span class="toggle-password" onclick="togglePasswordVisibility()">
+                    <img src="../Images/eye_visible.png" alt="Mostrar contraseña" />
+                </span>
+            </div>       
             <div class="checkbox">
                 <input type="checkbox" name="terminos" id="terminos" required>
                 <label for="terminos">Acepto los <a href="terminos.php" target="_blank">términos y condiciones</a></label>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión - IZETA3</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2 family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../Css/principal.css">
@@ -14,8 +14,9 @@
     <script src="../js/scroll.js" defer></script>
     <script src="../js/error.js" defer></script>
     <script src="../js/scroll_header.js" defer></script>
+    <script src="../js/clickeye.js" defer></script>
 </head>
-  
+
 <body>
     <header class="header">
         <div class="logo">
@@ -76,7 +77,12 @@
             }
             ?>
             <input type="text" name="identificador" placeholder="Usuario o correo electrónico" required>
-            <input type="password" name="contraseña" placeholder="Tu contraseña" required>
+            <div class="password-container">
+                <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
+                <span class="toggle-password" onclick="togglePasswordVisibility()">
+                    <img src="../Images/eye_visible.png" alt="Mostrar contraseña" />
+                </span>
+            </div>
             <button type="submit">Iniciar Sesión</button>
             <p>¿No tienes cuenta? <a href="../Html/registro.php">Regístrate</a></p>
         </form>
