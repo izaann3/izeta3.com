@@ -7,7 +7,7 @@
     <title>Valoraciones - IZETA3</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2 family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../Css/principal.css">
     <link rel="icon" href="../Images/ha.png" type="image/png">
     <script defer src="../js/gotop.js"></script>
@@ -66,14 +66,22 @@
     </video>
 
     <section id="valoraciones">
-        <h2>DEJANOS TU VALORACIÓN</h2>
-        <form action="../Php/guardar_valoraciones.php" method="POST" class="valoraciones-form">
-            <input type="text" id="nombre" name="nombre_usuario" placeholder="Tu nombre" required>
-            <textarea id="comentario" name="comentario" placeholder="Si te ha gustado nuestro servicio, déjanos tu valoración" rows="5" required></textarea>
-            <input type="number" id="puntuacion" name="puntuacion" min="1" max="5" placeholder="1" required>
-            <button type="submit">Enviar valoración</button>
-        </form>
-    </section>
+    <h2>DEJANOS TU VALORACIÓN</h2>
+    <?php
+    session_start(); 
+    if (!isset($_SESSION['usuario']) || !isset($_SESSION['token'])) {
+        echo '<p>Debes iniciar sesión para poder dejar una valoración.</p>';
+    } else {
+        echo '<form action="../Php/guardar_valoraciones.php" method="POST" class="valoraciones-form">
+                <input type="text" id="nombre" name="nombre_usuario" placeholder="Tu nombre" required>
+                <textarea id="comentario" name="comentario" placeholder="Si te ha gustado nuestro servicio, déjanos tu valoración" rows="5" required></textarea>
+                <input type="number" id="puntuacion" name="puntuacion" min="1" max="5" placeholder="1" required>
+                <input type="hidden" name="token" value="' . $_SESSION['token'] . '">
+                <button type="submit">Enviar valoración</button>
+            </form>';
+    }
+    ?>
+</section>
 
     <footer>
         <div class="separator"></div>
@@ -101,3 +109,4 @@
 </body>
 
 </html>
+

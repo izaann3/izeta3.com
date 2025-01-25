@@ -7,7 +7,7 @@
     <title>Contacto - IZETA3</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2 family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../Css/principal.css">
     <link rel="icon" href="../Images/ha.png" type="image/png">
     <script defer src="../js/gotop.js"></script>
@@ -68,12 +68,20 @@
     <section id="contact" class="contact">
         <h2>CONTACTO</h2>
         <p></p>
-        <form action="../Php/guardar_contacto.php" method="POST">
-            <input type="text" name="nombre" placeholder="Tu nombre" required>
-            <input type="email" name="correo" placeholder="Tu correo" required>
-            <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
+        <?php
+        session_start();
+        if (!isset($_SESSION['usuario']) || !isset($_SESSION['token'])) {
+            echo '<p>Debes iniciar sesión para poder ponerte en contacto con nosotros.</p>';
+        } else {
+            echo '<form action="../Php/guardar_contacto.php" method="POST">
+                    <input type="text" name="nombre" placeholder="Tu nombre" required>
+                    <input type="email" name="correo" placeholder="Tu correo" required>
+                    <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
+                    <input type="hidden" name="token" value="' . $_SESSION['token'] . '">
+                    <button type="submit">Enviar</button>
+                </form>';
+        }
+        ?>
     </section>
 
     <footer>
