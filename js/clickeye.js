@@ -4,7 +4,7 @@ function togglePasswordVisibility() {
 
     if (passwordField.type === "password") {
         passwordField.type = "text";
-        passwordIcon.src = "../Images/eye_hidden.png";
+        passwordIcon.src = "../Images/eye_invisible.png";
     } else {
         passwordField.type = "password";
         passwordIcon.src = "../Images/eye_visible.png";

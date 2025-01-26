@@ -14,9 +14,6 @@ if (!isset($_SESSION['usuario'])) {
 $token = $_POST['token'] ?? ''; 
 $user_id = $_SESSION['usuario_id'] ?? null; 
 
-echo "Token recibido: " . $token . "<br>";
-echo "Usuario ID: " . $user_id . "<br>";
-
 if (empty($token) || empty($user_id)) {
     echo "Token no proporcionado o usuario no autenticado.";
     exit();
@@ -29,24 +26,18 @@ $stmt_token_check->execute();
 $result_token_check = $stmt_token_check->get_result();
 
 if ($result_token_check->num_rows === 0) {
-    echo "Token inválido o expirado.<br>";
-} else {
-    // Aquí obtienes el dato del token
-    $token_data = $result_token_check->fetch_assoc();
-    
-    // Imprimes la fecha de expiración del token
-    echo "Token válido. Expiración: " . $token_data['expiracion'] . "<br>";
+    $_SESSION['error'] = "Token inválido o expirado.";
+    header("Location: ../Html/valoracion.php");
+    exit();
+}
 
-    // Comparar la fecha de expiración con la fecha actual
-    $token_expiration = $token_data['expiracion'];
-    $current_time = date('Y-m-d H:i:s');
-    echo "Fecha y hora actual: " . $current_time . "<br>";
-    
-    if ($token_expiration <= $current_time) {
-        echo "Token expirado.<br>";
-    } else {
-        echo "Token válido.<br>";
-    }
+$token_data = $result_token_check->fetch_assoc();
+$current_time = date('Y-m-d H:i:s');
+
+if ($token_data['expiracion'] <= $current_time) {
+    $_SESSION['error'] = "El token ha expirado.";
+    header("Location: ../Html/valoracion.php");
+    exit();
 }
 
 if (!empty($_POST['nombre_usuario']) && !empty($_POST['comentario']) && !empty($_POST['puntuacion'])) {
@@ -60,9 +51,13 @@ if (!empty($_POST['nombre_usuario']) && !empty($_POST['comentario']) && !empty($
         $stmt->bind_param("ssi", $nombre_usuario, $comentario, $puntuacion);
 
         if ($stmt->execute()) {
-            echo "La valoración ha sido guardada.";
+            $_SESSION['success'] = "Tu <strong>valoración</strong> ha sido enviada correctamente.";
+            header("Location: ../Html/valoracion.php");
+            exit();
         } else {
-            echo "Error al guardar la valoración: " . $stmt->error;
+            $_SESSION['error'] = "Error al enviar la <strong>valoración</strong>. Intentelo de nuevo.</strong>. " . $stmt->error;
+            header("Location: ../Html/valoraciones.php");
+            exit();
         }
 
         $stmt->close();

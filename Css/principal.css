@@ -791,7 +791,8 @@ header.hidden {
     object-fit: cover;
 }
 
-section.contact .alert-message.error {
+#contact .alert-message.error, 
+#valoraciones .alert-message.error {
     text-align: left !important;
     width: 80%;
     padding: 10px;
@@ -799,6 +800,23 @@ section.contact .alert-message.error {
     background-color: #e4c4c4;
     border: 1px solid #e4c4c4;
     color: #dd0303;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    transition: opacity 1s ease-out;
+    opacity: 1;
+    display: none;
+}
+
+#valoraciones .alert-message.success {
+    text-align: left !important;
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+    background-color: #eaf5e1;
+    border: 1px solid #eaf5e1;
+    color: #176d00;
     border-radius: 5px;
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
