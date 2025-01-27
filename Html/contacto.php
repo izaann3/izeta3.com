@@ -74,13 +74,22 @@
         if (!isset($_SESSION['usuario']) || !isset($_SESSION['token'])) {
             echo '<p>Debes iniciar sesión para poder ponerte en contacto con nosotros.</p>';
         } else {
-            echo '<form action="../Php/guardar_contacto.php" method="POST">
-                    <input type="text" name="nombre" placeholder="Tu nombre" required>
-                    <input type="email" name="correo" placeholder="Tu correo" required>
-                    <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
-                    <input type="hidden" name="token" value="' . $_SESSION['token'] . '">
-                    <button type="submit">Enviar</button>
-                </form>';
+            echo '<form action="../Php/guardar_contacto.php" method="POST" class="contacto-form">';
+            if (isset($_SESSION['success'])) {
+                echo '<div class="alert-message success">' . ($_SESSION['success']) . '</div>';
+                unset($_SESSION['success']);
+            }
+            if (isset($_SESSION['error'])) {
+                echo '<div class="alert-message error">' . ($_SESSION['error']) . '</div>';
+                unset($_SESSION['error']);
+            }
+            echo '
+                <input type="text" name="nombre" placeholder="Tu nombre" required>
+                <input type="email" name="correo" placeholder="Tu correo" required>
+                <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
+                <input type="hidden" name="token" value="' . $_SESSION['token'] . '">
+                <button type="submit">Enviar</button>
+            </form>';
         }
         ?>
     </section>

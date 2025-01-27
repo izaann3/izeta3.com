@@ -26,18 +26,18 @@ $stmt_token_check->execute();
 $result_token_check = $stmt_token_check->get_result();
 
 if ($result_token_check->num_rows === 0) {
-    echo "Token inválido o expirado.<br>";
-} else {
-    $token_data = $result_token_check->fetch_assoc();
-    
-    $token_expiration = $token_data['expiracion'];
-    $current_time = date('Y-m-d H:i:s');
-    
-    if ($token_expiration <= $current_time) {
-        echo "Token expirado.<br>";
-    } else {
-        echo "Token válido.<br>";
-    }
+    $_SESSION['error'] = "Token inválido o expirado.";
+    header("Location: ../Html/contacto.php");
+    exit();
+}
+
+$token_data = $result_token_check->fetch_assoc();
+$current_time = date('Y-m-d H:i:s');
+
+if ($token_data['expiracion'] <= $current_time) {
+    $_SESSION['error'] = "El token ha expirado.";
+    header("Location: ../Html/contacto.php");
+    exit();
 }
 
 if (!empty($_POST['nombre']) && !empty($_POST['correo']) && !empty($_POST['mensaje'])) {
@@ -51,9 +51,13 @@ if (!empty($_POST['nombre']) && !empty($_POST['correo']) && !empty($_POST['mensa
         $stmt->bind_param("sss", $nombre, $correo, $mensaje);
 
         if ($stmt->execute()) {
-            echo "Mensaje enviado con éxito.";
+            $_SESSION['success'] = "Tu petición de <strong>contacto</strong> ha sido enviada correctamente.";
+            header("Location: ../Html/contacto.php");
+            exit();
         } else {
-            echo "Error al enviar el mensaje: " . $stmt->error;
+            $_SESSION['error'] = "Error al enviar tu petición de <strong>contacto</strong>. Intentelo de nuevo.</strong>. " . $stmt->error;
+            header("Location: ../Html/contacto.php");
+            exit();
         }
 
         $stmt->close();

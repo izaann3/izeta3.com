@@ -1,23 +1,20 @@
-function mostrarMensaje(tipo) {
-    const mensaje = document.querySelector(`.alert-message.${tipo}`);
-    mensaje.style.display = 'block';
-    mensaje.style.opacity = 1;
+function mostrarError() {
+    const errorMessage = document.querySelector('.alert-message.error');
+    errorMessage.style.display = 'block';
+    errorMessage.style.opacity = 1;
 
     setTimeout(function() {
-        mensaje.style.transition = 'opacity 1s ease-out';
-        mensaje.style.opacity = 0;
+        errorMessage.style.transition = 'opacity 1s ease-out';
+        errorMessage.style.opacity = 0;
 
         setTimeout(function() {
-            mensaje.style.display = 'none';
+            errorMessage.style.display = 'none';
         }, 1000);
     }, 5000);
 }
 
 window.onload = function() {
     if (document.querySelector('.alert-message.error')) {
-        mostrarMensaje('error');
-    }
-    if (document.querySelector('.alert-message.succes')) {
-        mostrarMensaje('succes');
+        mostrarError();
     }
 };

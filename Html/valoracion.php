@@ -69,28 +69,28 @@
     <section id="valoraciones" class="valoraciones">
     <h2>DEJANOS TU VALORACIÓN</h2>
     <?php
-session_start(); 
-if (!isset($_SESSION['usuario']) || !isset($_SESSION['token'])) {
-    echo '<p>Debes iniciar sesión para poder dejar una valoración.</p>';
-} else {
-    echo '<form action="../Php/guardar_valoraciones.php" method="POST" class="valoraciones-form">';
-    if (isset($_SESSION['success'])) {
-        echo '<div class="alert-message success">' . ($_SESSION['success']) . '</div>';
-        unset($_SESSION['success']);
+    session_start(); 
+    if (!isset($_SESSION['usuario']) || !isset($_SESSION['token'])) {
+        echo '<p>Debes iniciar sesión para poder dejar una valoración.</p>';
+    } else {
+        echo '<form action="../Php/guardar_valoraciones.php" method="POST" class="valoraciones-form">';
+        if (isset($_SESSION['success'])) {
+            echo '<div class="alert-message success">' . ($_SESSION['success']) . '</div>';
+            unset($_SESSION['success']);
+        }
+        if (isset($_SESSION['error'])) {
+            echo '<div class="alert-message error">' . ($_SESSION['error']) . '</div>';
+            unset($_SESSION['error']);
+        }
+        echo '
+            <input type="text" id="nombre" name="nombre_usuario" placeholder="Tu nombre" required>
+            <textarea id="comentario" name="comentario" placeholder="Si te ha gustado nuestro servicio, déjanos tu valoración" rows="5" required></textarea>
+            <input type="number" id="puntuacion" name="puntuacion" min="1" max="5" placeholder="1" required>
+            <input type="hidden" name="token" value="' . $_SESSION['token'] . '">
+            <button type="submit">Enviar valoración</button>
+        </form>';
     }
-    if (isset($_SESSION['error'])) {
-        echo '<div class="alert-message error">' . ($_SESSION['error']) . '</div>';
-        unset($_SESSION['error']);
-    }
-    echo '
-        <input type="text" id="nombre" name="nombre_usuario" placeholder="Tu nombre" required>
-        <textarea id="comentario" name="comentario" placeholder="Si te ha gustado nuestro servicio, déjanos tu valoración" rows="5" required></textarea>
-        <input type="number" id="puntuacion" name="puntuacion" min="1" max="5" placeholder="1" required>
-        <input type="hidden" name="token" value="' . $_SESSION['token'] . '">
-        <button type="submit">Enviar valoración</button>
-    </form>';
-}
-?>
+    ?>
     </section>
 
     <footer>
