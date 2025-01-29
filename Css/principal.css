@@ -24,7 +24,7 @@ hr {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: #000000;
     overflow-x: hidden;
     padding-top: 60px;
     transition: 0.5s;
@@ -304,7 +304,6 @@ footer {
     color: #cd853f;
 }
 
-/* Estilo del header */
 .header {
     background-color: #000;
     display: flex;
@@ -321,7 +320,6 @@ footer {
     opacity: 1;
 }
 
-/* Cuando el header se oculta */
 header.hidden {
     opacity: 0;
     top: -85px;
@@ -791,7 +789,7 @@ header.hidden {
     object-fit: cover;
 }
 
-#login .alert-message.error, 
+#login .alert-message.error,
 #contact .alert-message.error, 
 #valoraciones .alert-message.error {
     text-align: left !important;
