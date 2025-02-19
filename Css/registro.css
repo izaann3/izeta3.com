@@ -1,0 +1,288 @@
+:root {
+    --font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --main-color: #000;
+    --point-color: #fff;
+    --size: 5px;
+}
+
+body {
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #050505;
+    color: #ffffff;
+}
+
+.loader {
+    background-color: var(--main-color);
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    z-index: 100000;
+    animation: fadeOut 2s forwards;
+}
+
+.loader__element {
+    border-radius: 100%;
+    border: var(--size) solid var(--point-color);
+    margin: calc(var(--size) * 2);
+    animation: preloader .6s ease-in-out alternate infinite;
+}
+
+.loader__element:nth-child(2) {
+    animation: preloader .6s ease-in-out alternate .2s infinite;
+}
+
+.loader__element:nth-child(3) {
+    animation: preloader .6s ease-in-out alternate .4s infinite;
+}
+
+@keyframes preloader {
+    100% { transform: scale(2); }
+}
+
+@keyframes fadeOut {
+    100% {
+      opacity: 0;
+      pointer-events: none;
+    }
+}
+
+.login-logo {
+    width: auto;
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact {
+    background-color: #000000;
+    padding: 30px;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 auto;
+}
+
+.contact h2 {
+    text-align: left;
+    width: 100%;
+    color: #ffffff;
+    margin: 0 0 15px 0;
+}
+
+.contact p {
+    text-align: left;
+    width: 100%;
+    font-size: 15px;
+    color: #bebebe;
+    margin: 0 0 15px 0;
+}
+
+.contact form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.contact input,
+.contact button,
+.password-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-family: var(--font-family);
+    background-color: #000000;
+    color: #ffffff;
+    border: 0.5px solid #181818;
+    box-sizing: border-box;
+}
+
+.contact input:focus,
+.password-container input:focus {
+    background-color: #000000;
+    outline: none;
+    border-color: #cd853f;
+}
+
+.contact .password-container {
+    position: relative;
+    width: 100%;
+}
+
+.contact .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.contact button {
+    font-weight: 700;
+    color: #ffffff;
+    background: #cd853f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.contact p a {
+    text-decoration: none;
+    color: #cd853f;
+    transition: text-decoration 0.8s ease;
+}
+
+.contact p a:hover {
+    text-decoration: underline;
+}
+
+#login .alert-message.error,
+#contact .alert-message.error, 
+#valoraciones .alert-message.error {
+    text-align: left !important;
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+    background-color: #e4c4c4;
+    border: 1px solid #e4c4c4;
+    color: #dd0303;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    transition: opacity 1s ease-out;
+    opacity: 1;
+    display: none;
+}
+
+#contact .alert-message.success, 
+#valoraciones .alert-message.success {
+    text-align: left !important;
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+    background-color: #eaf5e1;
+    border: 1px solid #eaf5e1;
+    color: #176d00;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    transition: opacity 1s ease-out;
+    opacity: 1;
+    display: none;
+}
+
+.password-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    position: relative;
+    margin: 0px 0;
+}
+
+.password-container input {
+    width: 100%;
+    padding: 10px;
+    background-color: #000000;
+    border: 0.5px solid #181818;
+    color: #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-family: var(--font-family);
+}
+
+.password-container input:focus {
+    background-color: #000000;
+    outline: none;
+    border-color: #cd853f;
+}
+
+.password-container .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+}
+
+.password-container .toggle-password img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#register-text {
+    font-size: 15px;
+    color: #ffffff;
+    margin: 0;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    font-family: var(--font-family);
+    font-size: 15px;
+}
+
+.checkbox input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    accent-color: #cd853f;
+    border: 0.5px solid #181818;
+    background-color: #000000;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.checkbox input[type="checkbox"]:focus {
+    outline: none;
+    border-color: #cd853f;
+}
+
+.checkbox label {
+    color: #bebebe;
+    font-size: 15px;
+}
+
+.checkbox label a {
+    color: #cd853f;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.checkbox label a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+
+

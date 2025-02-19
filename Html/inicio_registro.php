@@ -33,7 +33,7 @@
     <section id="contact" class="contact">
     <img src="../../Images/iz3logo.png" alt="Logo" class="login-logo">    
     <h2>Iniciar sesión</h2>
-        <p>Por favor introduce tu usuario o correo electrónico y contraseña:</p>
+        <p>Por favor, introduce tu usuario o correo electrónico y contraseña:</p>
         <form action="../Php/guardar_iniciosesion.php" method="POST">
             <?php 
             if (isset($_SESSION['error'])) {
