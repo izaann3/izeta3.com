@@ -13,29 +13,31 @@
     <script defer src="../js/gotop.js"></script>
     <script src="../js/scroll.js" defer></script>
     <script src="../js/error.js" defer></script>
+    <script src="../js/success.js" defer></script>
     <script src="../js/scroll_header.js" defer></script>
     <script src="../js/clickeye.js" defer></script>
 </head>
 
-<div class="loader">
-        <span class="loader__element"></span>
-        <span class="loader__element"></span>
-        <span class="loader__element"></span>
-</div>
-    
-<div class="loader">
-        <span class="loader__element"></span>
-        <span class="loader__element"></span>
-        <span class="loader__element"></span>
-</div>
-
 <body>
+	<div class="loader">
+        	<span class="loader__element"></span>
+        	<span class="loader__element"></span>
+        	<span class="loader__element"></span>
+	</div>
+    
+	<div class="loader">
+        	<span class="loader__element"></span>
+        	<span class="loader__element"></span>
+        	<span class="loader__element"></span>
+	</div>
+
     <section id="contact" class="contact">
     <img src="../../Images/iz3logo.png" alt="Logo" class="login-logo">    
     <h2>Iniciar sesión</h2>
         <p>Por favor, introduce tu usuario o correo electrónico y contraseña:</p>
         <form action="../Php/guardar_iniciosesion.php" method="POST">
             <?php 
+            session_start();
             if (isset($_SESSION['error'])) {
                 echo '<div class="alert-message error">' . $_SESSION['error'] . '</div>';
                 unset($_SESSION['error']);
