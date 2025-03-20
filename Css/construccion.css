@@ -2,7 +2,7 @@
   --font-family: 'Poppins', sans-serif;
   --main-color: #000;
   --point-color: #fff;
-  --size: 5px;
+  --size: 4px;
 }
 
 body {
@@ -14,7 +14,7 @@ body {
   height: 100vh;
   margin: 0;
   text-align: center;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
 .mensaje {
@@ -25,19 +25,19 @@ body {
 }
 
 .logo {
-  height: 45px;
-  margin-bottom: 10px;
+  height: 35p;
+  margin-bottom: 8px;
 }
 
 .principal {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   color: #ccc;
   white-space: nowrap;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .secundario {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #888;
 }
 
@@ -79,5 +79,19 @@ body {
   100% {
     opacity: 0;
     pointer-events: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 30px;
+  }
+
+  .principal {
+    font-size: 1rem;
+  }
+
+  .secundario {
+    font-size: 0.85rem;
   }
 }
